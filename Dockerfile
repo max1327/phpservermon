@@ -1,6 +1,6 @@
 FROM mylesp/dockerlamp
 
-RUN apt update && apt install curl wget php5-curl && apt clean && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt install curl wget && apt clean && rm -rf /var/lib/apt/lists/*
 RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
 
 
