@@ -1,7 +1,7 @@
 FROM eboraas/apache
 MAINTAINER Ed Boraas <ed@boraas.ca>
 
-RUN apt update && apt -y install php5 php5-mysql curl wget php5-curl && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN add-apt-repository -y ppa:ondrej/php && apt update && apt -y install php5 php5-mysql curl wget php5-curl && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
 
 
