@@ -1,7 +1,8 @@
 FROM mylesp/dockerlamp
 
 RUN apt update 
-RUN apt install curl wget 
+RUN apt install curl 
+RUN apt install wget 
 RUN apt clean 
 RUN rm -rf /var/lib/apt/lists/*
 RUN /usr/sbin/a2dismod 'mpm_*' 
