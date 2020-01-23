@@ -1,7 +1,11 @@
 FROM mylesp/dockerlamp
 
-RUN apt update && apt install curl wget && apt clean && rm -rf /var/lib/apt/lists/*
-RUN /usr/sbin/a2dismod 'mpm_*' && /usr/sbin/a2enmod mpm_prefork
+RUN apt update 
+RUN apt install curl wget 
+RUN apt clean 
+RUN rm -rf /var/lib/apt/lists/*
+RUN /usr/sbin/a2dismod 'mpm_*' 
+RUN /usr/sbin/a2enmod mpm_prefork
 RUN ln -fs /usr/share/zoneinfo/Asia/Almaty /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 
