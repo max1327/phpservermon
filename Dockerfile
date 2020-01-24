@@ -1,5 +1,6 @@
 FROM mylesp/dockerlamp
 
+RUN apt install wget
 RUN apt clean 
 RUN rm -rf /var/lib/apt/lists/*
 RUN ln -fs /usr/share/zoneinfo/Asia/Almaty /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
