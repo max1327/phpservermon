@@ -17,7 +17,6 @@ RUN set -x \
 	&& rm -rf * \
 	&& cd /tmp \
 	&& wget $PHPMONITOR_URL \ 
-	&& mv download phpmonitor.tar.gz \
 	&& tar -xvf phpmonitor.tar.gz --strip-components=1 \
 	&& cd phpservermon-3.2.0 \
 	&& mv * /var/www/html \ 
