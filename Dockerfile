@@ -2,8 +2,6 @@ FROM mylesp/dockerlamp
 
 RUN apt clean 
 RUN rm -rf /var/lib/apt/lists/*
-RUN /usr/sbin/a2dismod 'mpm_*' 
-RUN /usr/sbin/a2enmod mpm_prefork
 RUN ln -fs /usr/share/zoneinfo/Asia/Almaty /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 
@@ -12,7 +10,7 @@ EXPOSE 80
 EXPOSE 443
 
 ENV VERSION 3.2.0
-ENV PHPMONITOR_URL https://sourceforge.net/projects/phpservermon/files/latest/download
+ENV PHPMONITOR_URL https://sourceforge.net/projects/phpservermon/files/phpservermon/phpservermon-3.2.0.tar.gz
 
 RUN set -x \
  	&& cd /var/www/html \
